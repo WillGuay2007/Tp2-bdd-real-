@@ -9,6 +9,7 @@
 #include "ui_style.h"
 #include "login.h"
 #include "store.h"
+#include "Database.h"
 
 
 void game_preview_player(WinRect sub_rect,GameData* g){
@@ -27,7 +28,11 @@ void game_preview_player(WinRect sub_rect,GameData* g){
     }
 }
 void game_init(GameData* g){
-    InitWindow(g->win.w,g->win.h,"GoodGame™");
+
+    StartDatabase(g);
+    InitTables(g);
+
+    InitWindow(g->win.w,g->win.h,"Store™");
     SetTargetFPS(60);
 
     GuiLoadStyleDefault();
@@ -85,6 +90,8 @@ void game_end(GameData* g){
     UnloadTexture(*g->img);
 
     CloseWindow();
+
+    EndDatabase(g);
 }
 
 #define NUM_ELEMENTS 4

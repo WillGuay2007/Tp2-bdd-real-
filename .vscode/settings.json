@@ -38,7 +38,8 @@
         "store.h": "c",
         "login.h": "c",
         "sqlite3.h": "c",
-        "raylib.h": "c"
+        "raylib.h": "c",
+        "database.h": "c"
     },
     "cmake.configureOnOpen": false
 }
